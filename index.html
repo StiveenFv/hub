@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinguiPro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+<header>
+<img src="Imagenes/logo.png.jpeg" alt="Logo" class="logo">
+<h1>LinguiPro</h1>
+</header>
+<main>
+<!-- Menú de Inicio -->
+<section id="home-section" class="section">
+<h2>Inicio</h2>
+<button onclick="showLogin()">Iniciar Sesión</button>
+<button onclick="showRegister()">Registrarse</button>
+</section>
+
+<!-- Inicio de Sesión -->
+<section id="login-section" class="section hidden">
+<h2>Iniciar Sesión</h2>
+<form id="login-form">
+<input type="email" id="login-email" placeholder="Correo electrónico" required>
+<input type="password" id="login-password" placeholder="Contraseña" required>
+<div id="login-error" class="error hidden">Correo electrónico o contraseña incorrectos.</div>
+<button type="submit">Iniciar Sesión</button>
+</form>
+<p>¿No tienes una cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+</section>
+
+<!-- Registro -->
+<section id="register-section" class="section hidden">
+<h2>Registrarse</h2>
+<form id="register-form">
+<input type="email" id="register-email" placeholder="Correo electrónico" required>
+<input type="password" id="register-password" placeholder="Contraseña" required>
+<input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña" required>
+<div id="register-error" class="error hidden">Las contraseñas no coinciden.</div>
+<button type="submit">Registrarse</button>
+</form>
+<p>¿Ya tienes una cuenta? <a href="#" onclick="showLogin()">Inicia Sesión</a></p>
+</section>
+
+<!-- Menú de Juegos -->
+<section id="games-menu-section" class="section hidden">
+<h2>Menú de Juegos</h2>
+<button onclick="showGame('game1')">Juego 1</button>
+<button onclick="showGame('game2')">Juego 2</button>
+<button onclick="showGame('game3')">Juego 3</button>
+<button onclick="showLessons()">Ir al Menú de Lecciones</button>
+</section>
+
+<!-- Juego 1 (Ahorcado) -->
+<section id="game1-section" class="section hidden">
+<h2>Juego 1: Ahorcado</h2>
+<div id="hangman-game">
+  <p id="word-to-guess"></p>
+  <p id="guesses-left"></p>
+  <p id="message"></p>
+  <input type="text" id="guess-input" maxlength="1" placeholder="Introduce una letra">
+  <button onclick="makeGuess()">Adivinar</button>
+</div>
+</section>
+
+<!-- Juego 2 -->
+<section id="game2-section" class="section hidden">
+<h2>Juego 2</h2>
+<p>Hola</p>
+</section>
+
+<!-- Juego 3 -->
+<section id="game3-section" class="section hidden">
+<h2>Juego 3</h2>
+<p>Contenido del Juego 3 aquí.</p>
+</section>
+
+<!-- Menú de Lecciones -->
+<section id="lessons-menu-section" class="section hidden">
+<h2>Menú de Lecciones</h2>
+<button onclick="startLesson('basic')">Lección Básica</button>
+<button onclick="startLesson('intermediate')">Lección Intermedia</button>
+<button onclick="startLesson('advanced')">Lección Avanzada</button>
+</section>
+
+<!-- Lección Básica -->
+<section id="basic-lesson-section" class="section hidden">
+<h2>Lección Básica</h2>
+<p>Contenido de la lección básica aquí.</p>
+<button onclick="showGame('game1')">Iniciar Juego 1</button>
+</section>
+
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
